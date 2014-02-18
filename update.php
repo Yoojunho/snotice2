@@ -32,7 +32,7 @@ if (!$result) {
 $row=mysql_fetch_array($result);
 
 if ($pass==$row[pass]) {
-	$query = "UPDATE main SET eventname='$eventname', hostname='$hostname', eventsdate='$eventsdate', eventfdate='$eventfdate', eventtime='$eventtime', eventstyle='$eventstyle', eventpres='$eventpres', image='$image' WHERE id=$_GET[id]";
+	$query = "UPDATE main SET eventname='$eventname', hostname='$hostname', eventsdate='$eventsdate', eventfdate='$eventfdate', eventtime='$eventtime', eventstyle='$eventstyle', eventpres='$eventpres', image='$image', eventp='$eventp' WHERE id=$_GET[id]";
     $result=mysql_query($query, $dbc);
 }
 else {

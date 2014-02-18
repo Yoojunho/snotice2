@@ -63,6 +63,12 @@ $row = mysql_fetch_array($result);
 							</td>
 						</tr>
 						<tr>
+							<td width="60" align="left">행사 장소</td>
+							<td align="left" >
+								<input type="text" name="eventp" placeholder="문화관 중강당" required="required" size="20" maxlength="25" value="<?=$row[eventp]?>" >
+							</td>
+						</tr>
+						<tr>
 							<td width="60" align="left">행사 시작일</td>
 							<td align="letf">
 								<input type="date" name="eventsdate" placeholder="2014-06-29" required="required" value="<?=$row[eventsdate]?>">

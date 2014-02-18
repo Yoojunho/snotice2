@@ -62,7 +62,11 @@ bgcolor=#ff4444>
 	<td width=80 height=20 align=center #ff4444><font color=white>
 	행사 시간</td><td width=240
 	bgcolor=white><?=$row[eventtime]?></td>
-	<td width=50 height=20 align=center #ff4444><font color=white>행사 포스터</td>
+	<td width=50 height=20 align=center #ff4444><font color=white>행사 장소</td>
+	<td	width=240 bgcolor=white><?=$row[eventp]?></td>
+</tr>
+<tr>
+    <td width=50 height=20 align=center #ff4444><font color=white>행사 포스터</td>
 	<td	width=240 bgcolor=white><?=$row[image]?></td>
 </tr>
 <tr>

@@ -29,7 +29,8 @@ extract($_SESSION);
  $eventpres = $_POST['eventpres'];
  $pass=$_POST['pass'];
  $image = $_FILES['image']['name'];
-
+ $eventp = $_POST['eventp'];
+ 
   ini_set("display_errors", "1");
 $uploaddir = '/var/www/snotice2/images/';
 $uploadfile = $uploaddir . basename($_FILES['image']['name']);
@@ -40,7 +41,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
     print "파일 업로드 공격의 가능성이 있습니다!\n";
 }
 
- $query = "INSERT INTO main(eventname, hostname, eventsdate, eventfdate, eventtime, eventstyle, eventpres, image, id, pass, wdate, view) VALUES('$eventname', '$hostname', '$eventsdate', '$eventfdate', '$eventtime', '$eventstyle', '$eventpres', '$image', '', '$pass', now(), 0)";
+ $query = "INSERT INTO main(eventname, hostname, eventsdate, eventfdate, eventtime, eventstyle, eventpres, image, id, pass, wdate, view, eventp) VALUES('$eventname', '$hostname', '$eventsdate', '$eventfdate', '$eventtime', '$eventstyle', '$eventpres', '$image', '', '$pass', now(), 0, '$eventp')";
  $result = mysql_query($query, $dbc) 
      or die('Error querying database');
 	 mysql_close($dbc);

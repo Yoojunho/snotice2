@@ -36,6 +36,11 @@
 								<input type="text" name=hostname placeholder="사범대 락밴드 파문" required="required" size="20" maxlength="25" >
 							</td>
 						<tr>
+							<td width="60" align="left">행사 장소</td>
+							<td align="left" >
+								<input type="text" name=eventp placeholder="교내 아크로" required="required" size="20" maxlength="25" >
+							</td>
+						<tr>
 							<td width="60" align="left">행사 시작일</td>
 							<td align="letf">
 								<input type="date" name=eventsdate placeholder="2014-06-29" required="required">
