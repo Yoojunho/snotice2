@@ -1,7 +1,7 @@
 <!doctype html>
 <head>
-	<meta charset ="utf-8">
-	<title>스노티스 행사 입력</title>
+	<meta charset="UTF-8">
+	<title>스노티스 행사입력</title>
 	<style>
 		<!--
 		td { font-size : 9pt; font-weight : bold; }
@@ -13,10 +13,10 @@
 		-->
 	</style>
 </head>
-
+	
 <body topmargin="50" leftmargin="0" text="#464646">
-	<center>
-		<form name="in" onsubmit="return FormCheck()" enctype="multipart/form-data" method="post" action="insert.php">
+	<div align= "center">
+	<form action="insert.php" method=POST onsubmit="return formCheck()" enctype="multipart/form-data">
 			<table width="800" border="0" cellpadding="5" cellspacing="3" bgcolor="#ff4444">
 				<tr>
 					<td height="20" align="center" bgcolor="#ff4444">
@@ -27,18 +27,18 @@
 						<tr>
 							<td width="60" align="left" >행사 이름</td>
 							<td align=left>
-							<input type="text" name=eventname placeholder="파문 정기 공연" required="required" size="20" maxlength="15">
+							<input type="text" name=eventname placeholder="파문 정기 공연"  size="20" maxlength="15">
 							</td>
 						</tr>
 						<tr>
 							<td width="60" align="left">주최자</td>
 							<td align="left" >
-								<input type="text" name=hostname placeholder="사범대 락밴드 파문" required="required" size="20" maxlength="25" >
+								<input type="text" name=hostname placeholder="사범대 락밴드 파문"  size="20" maxlength="25" >
 							</td>
 						<tr>
 							<td width="60" align="left">행사 장소</td>
 							<td align="left" >
-								<input type="text" name=eventp placeholder="교내 아크로" required="required" size="20" maxlength="25" >
+								<input type="text" name=eventp placeholder="교내 아크로"  size="20" maxlength="25" >
 							</td>
 						<tr>
 							<td width="60" align="left">행사 시작일</td>
@@ -78,7 +78,7 @@
 						</tr>
 						<tr>
 								<td width="10" align="left">행사 포스터</td>
-								<td align="left>">
+								<td align="left">
 								<input type="hidden" name="MAX_FILE_SIZE" value="3007680" />
                             <input type="file" name=image />
 							</td>
@@ -101,30 +101,39 @@
 						</tr>
 			       </table>	
 				</td>
-				</tr>   
-			</table>
-			<script>
-				function FormCheck() {
-					if(!in.eventname.value)
-					{
-					 alert("행사 이름을 입력해주세요")
-					 return false;	
-					}
-					 }
-				function FormCheck() {
-					if(!in.hostname.value)
-					{
-					 alert("주최자를 입력해주세요")
-					 return false;	
-					}
-				function FormCheck() {
-					if(!in.eventp.value)
-					{
-					 alert("행사 장소를 입력해주세요")
-					 return false;	
-					}	
-					 }
-			</script>
-		</form>
-	</center>
-	</body>
+				</tr>
+      </form>
+	<script>
+	 function formCheck() 
+	 {
+	    var eventname = document.forms[0].eventname.value;
+	    var hostname = document.forms[0].hostname.value;
+	    var eventp = document.forms[0].eventp.value;
+	 if( eventname == null || eventname =="")
+	 {
+	    alert("행사 이름을 입력해주세요");
+	 document.forms[0].eventname.focus();
+	 return false;						
+	 
+	 }
+	 	 if( hostname == null || hostname =="")
+	 {
+	    alert("주최자를 입력해주세요");
+	 document.forms[0].hostname.focus();
+	 return false;						
+	 
+	 }
+	 	 if( eventp == null || eventp =="")
+	 {
+	    alert("행사 장소를 입력해주세요");
+	 document.forms[0].eventp.focus();
+	 return false;						
+	 
+	 }
+	    alert("글이 등록되었습니다");
+	    return true;
+	    
+	   }
+  </script>
+  </div>
+</body>
