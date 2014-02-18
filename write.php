@@ -16,7 +16,7 @@
 
 <body topmargin="50" leftmargin="0" text="#464646">
 	<center>
-		<form enctype="multipart/form-data" method="post" action="insert.php">
+		<form name="in" onsubmit="return FormCheck()" enctype="multipart/form-data" method="post" action="insert.php">
 			<table width="800" border="0" cellpadding="5" cellspacing="3" bgcolor="#ff4444">
 				<tr>
 					<td height="20" align="center" bgcolor="#ff4444">
@@ -103,6 +103,28 @@
 				</td>
 				</tr>   
 			</table>
+			<script>
+				function FormCheck() {
+					if(!in.eventname.value)
+					{
+					 alert("행사 이름을 입력해주세요")
+					 return false;	
+					}
+					 }
+				function FormCheck() {
+					if(!in.hostname.value)
+					{
+					 alert("주최자를 입력해주세요")
+					 return false;	
+					}
+				function FormCheck() {
+					if(!in.eventp.value)
+					{
+					 alert("행사 장소를 입력해주세요")
+					 return false;	
+					}	
+					 }
+			</script>
 		</form>
 	</center>
 	</body>
