@@ -17,7 +17,7 @@ font-size : 9pt;}
 <center>
 <BR>
 
-<form action=del.php?id=<?=$id?> method=post>
+<form action=del.php?id=<?=$_GET[id]?> method=post>
 <table width=300 border=0 cellpadding=2 cellspacing=1
 bgcolor=#ff4444>
 <tr>

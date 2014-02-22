@@ -34,7 +34,7 @@ extract($_COOKIE);
 extract($_SESSION);
 	include "db_info.php";
 
-	$result=mysql_query("SELECT * FROM main WHERE id=$id", $dbc);
+	$result=mysql_query("SELECT * FROM main WHERE id='$_GET[id]'", $dbc);
 	$row=mysql_fetch_array($result);
 ?>
 

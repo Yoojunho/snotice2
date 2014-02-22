@@ -21,7 +21,7 @@ extract($_SESSION);
 include "db_info.php";
 
 
-$id = $_GET['id']; $pass = $_POST['pass'];
+$id = $_GET[id]; $pass = $_POST[pass];
 
 $result = mysql_query("select pass from main where id = '$_GET[id]'", $dbc);
 if (!$result) {
@@ -47,7 +47,7 @@ else {
 
 mysql_close($dbc);
 
-echo ("<meta http-equiv='Refresh' content='1; URL=read.php?id$_GET[id]'>");
+echo ("<meta http-equiv='Refresh' content='1; URL=read.php?id=$_GET[id]'>");
 
 ?>
 

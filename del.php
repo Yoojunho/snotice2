@@ -20,13 +20,13 @@ extract($_SESSION);
 
 include "db_info.php";
 
-$result=mysql_query("SELECT pass FROM main WHERE id=$id",
+$result=mysql_query("SELECT pass FROM main WHERE id='$_GET[id]'",
 $dbc);
 $row=mysql_fetch_array($result);
 
 if ($pass==$row[pass] )
 {
-	$query = "DELETE FROM main WHERE id=$id ";
+	$query = "DELETE FROM main WHERE id='$_GET[id]'";
 	$result=mysql_query($query, $dbc);
 }
 else

@@ -16,7 +16,7 @@
 
 <body topmargin="50" leftmargin="0" text="#464646">
 	<center>
-		<form enctype="multipart/form-data" action=update.php?id=<?=$id?> method=post>
+		<form enctype="multipart/form-data" action=update.php?id=<?=$_GET[id]?> method=post>
 			<table width="800" border="0" cellpadding="5" cellspacing="3" bgcolor="#ff4444">
 				<tr>
 					<td height="20" align="center" bgcolor="#ff4444">
@@ -40,7 +40,7 @@ extract($_SESSION);
 
 include "db_info.php";
 
-$result = mysql_query("select * from main where id = '$id'");
+$result = mysql_query("select * from main where id = '$_GET[id]'");
 if (!$result) {
     echo 'Could not run query: ' . mysql_error();
     exit;
