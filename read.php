@@ -68,7 +68,10 @@ bgcolor=#ff4444>
 <tr>
     <td width=50 height=20 align=center #ff4444><font color=white>행사 포스터</td>
 	<td	width=240 bgcolor=white><?=$row[image]?></td>
-</tr>
+	<td width=50 height=20 align=center #ff4444>
+		<a href="images/<?=$row[image]?>">
+			<font color=white>파일보기(클릭)</font></a>
+   </td>
 <tr>
 	<td bgcolor=white colspan=4>
 	<font color=black>
