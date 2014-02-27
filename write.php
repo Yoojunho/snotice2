@@ -63,7 +63,7 @@
 							<td align="letf">
                           <select name=eventstyle>
                                 <option value="1">일일호프/장터</option>
-                                <option value="2" selected="selected">공연</option>
+                                <option value="2">공연</option>
                                 <option value="3">강연</option>
                                 <option value="4">모집</option>
                                 <option value="5">기타</option>
