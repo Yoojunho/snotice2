@@ -1,11 +1,10 @@
 <?php
+
 $connect = mysql_connect("localhost", "root", "ysj082400"); //DB 주소 바꿔주시믄 감사하겠슴다
 
-mysql_selectdb("Main"); //DB 선택
+mysql_selectdb("Main");
 
-mysql_query("set names utf8"); //이것 또한 한글(utf8)을 지원하기 위한 것
-
- 
+mysql_query("set names utf8");
 
 $qry = "select * from main;";
 
@@ -21,9 +20,28 @@ while($obj = mysql_fetch_object($result))
 
 {
 
-    $name = $obj->name;
+    $eventname = $obj->eventname;
 
-    $price = $obj->price;
+    $eventhost = $obj->eventhost;
+
+
+
+
+    $eventsdate = $obj->eventsdate;
+
+    $eventfdate = $obj->eventfdate;
+
+    $eventtime = $obj->eventtime;
+
+    $eventstyle = $obj->eventstylet;
+
+    $eventpres = $obj->eventpres;
+
+    $image = $obj->image;
+
+    $id = $obj->id;
+
+    $eventp = $obj->eventp;
 
  
 
@@ -55,12 +73,10 @@ while($obj = mysql_fetch_object($result))
 
  
 
-$dir = "http://snotice.co.kr"; 
+$dir = "ec2-54-199-209-96.ap-northeast-1.compute.amazonaws.com/snotice2/xml/"; //파일 저장 경로
 
-$filename = $dir."/searchresult.xml";
+$filename = $dir."/searchresult.xml"; 
 
- 
-
-file_put_contents($filename, $xmlcode); //xmlcode의 내용을 xml파일로 출력
+file_put_contents($filename, $xmlcode); 
 
 ?>
