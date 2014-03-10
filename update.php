@@ -23,6 +23,21 @@ include "db_info.php";
 
 $id = $_GET[id]; $pass = $_POST[pass];
 
+$image=""; //변수 초기화
+if(!empty($_FILES['image']['name']))
+{
+	if(move_uploaded_file($_FILES['image']['tmp_name'],'./images/'.$_FILES['image']['name']))
+    {
+	  $image = $_FILES['image']['name'];
+	  $add_query = ", image = '$image' ";
+}	
+else {
+	ErrorMessage ('업로드에 실패하였습니다.');
+    }
+
+}
+
+
 $result = mysql_query("select pass from main where id = '$_GET[id]'", $dbc);
 if (!$result) {
     echo 'Could not run query: ' . mysql_error();
@@ -32,7 +47,7 @@ if (!$result) {
 $row=mysql_fetch_array($result);
 
 if ($pass==$row[pass]) {
-	$query = "UPDATE main SET eventname='$eventname', hostname='$hostname', eventsdate='$eventsdate', eventfdate='$eventfdate', eventtime='$eventtime', eventstyle='$eventstyle', eventpres='$eventpres', image='$image', eventp='$eventp' WHERE id=$_GET[id]";
+	$query = "UPDATE main SET eventname='$eventname', hostname='$hostname', eventsdate='$eventsdate', eventfdate='$eventfdate', eventtime='$eventtime', eventstyle='$eventstyle', eventpres='$eventpres', image='$add_query', eventp='$eventp' WHERE id=$_GET[id]";
     $result=mysql_query($query, $dbc);
 }
 else {
