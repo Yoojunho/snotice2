@@ -1,20 +1,18 @@
 <?php
 
-$connect = mysql_connect("localhost", "root", "ysj082400"); //DB 주소 바꿔주시믄 감사하겠슴다
+$connect = mysql_connect("localhost", "root", "ysj082400"); //DB 주ì ëê주ìë ê?¬íê?´ë
 
 mysql_selectdb("Main");
 
-mysql_query("set names utf8");
-
-$qry = "select * from main;";
+$qry = "SELECT * FROM main WHERE eventsdate >= now();";
 
 $result = mysql_query($qry);
 
- 
 
-$xmlcode = "<?xml version = \"1.0\" encoding = \"utf-8\"?-->\n"; 
 
- 
+$xmlcode = "<?xml version = \"1.0\" encoding = \"utf-8\"?>\n";
+
+
 
 while($obj = mysql_fetch_object($result))
 
@@ -22,10 +20,7 @@ while($obj = mysql_fetch_object($result))
 
     $eventname = $obj->eventname;
 
-    $eventhost = $obj->eventhost;
-
-
-
+    $eventhost = $obj->hostname;
 
     $eventsdate = $obj->eventsdate;
 
@@ -33,17 +28,15 @@ while($obj = mysql_fetch_object($result))
 
     $eventtime = $obj->eventtime;
 
-    $eventstyle = $obj->eventstylet;
+    $eventstyle = $obj->eventstyle;
 
     $eventpres = $obj->eventpres;
 
     $image = $obj->image;
 
-    $id = $obj->id;
-
     $eventp = $obj->eventp;
 
- 
+
 
     $xmlcode .= "<node>\n";
 
@@ -63,20 +56,13 @@ while($obj = mysql_fetch_object($result))
 
     $xmlcode .= "<image>$image</image>\n";
 
-    $xmlcode .= "<id>$id</id>\n";
-
     $xmlcode .= "<eventp>$eventp</eventp>\n";
 
     $xmlcode .= "</node>\n";
 
 }
 
- 
+$filename = "./xml/searchresult.xml";
 
-$dir = "ec2-54-199-209-96.ap-northeast-1.compute.amazonaws.com/snotice2/xml/"; //파일 저장 경로
-
-$filename = $dir."/searchresult.xml"; 
-
-file_put_contents($filename, $xmlcode); 
-
+file_put_contents($filename, $xmlcode);
 ?>
