@@ -14,4 +14,7 @@ extract($_SESSION);
 
  $dbc = mysql_connect("localhost", "root", "ysj082400");
  mysql_select_db("Main",$dbc);
+ mysql_query("set session character_set_connection=utf8;");
+ mysql_query("set session character_set_result=utf8;");
+ mysql_query("set session character_set_client=utf8;");
  ?>
