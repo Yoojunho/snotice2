@@ -73,9 +73,9 @@ bgcolor=#ff4444>
 			<font color=white>파일보기(클릭)</font></a>
    </td>
 <tr>
-	<td bgcolor=white colspan=4>
+	<td bgcolor=white colspan=4 style="word-break:break-all;">
 	<font color=black>
-	<pre><?=$row[eventpres]?></pre>
+	<?=nl2br(str_replace(" ", "&nbsp;", strip_tags($row[eventpres])));?>
 	</font>
 	</td>
 </tr>
