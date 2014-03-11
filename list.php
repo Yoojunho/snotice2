@@ -14,6 +14,7 @@ if (!$no || $no < 0) $no=0;
 
 
 $query = "SELECT * FROM main ORDER BY id DESC LIMIT $no,$page_size";
+mysql_query("set names utf8");
 $result = mysql_query($query, $dbc);
 
 $result_count=mysql_query("SELECT count(*) FROM main",$dbc);
