@@ -1,6 +1,6 @@
 <!DOCTYPE >
 <head>
-	<meta charset ="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>스노티스 행사 입력</title>
 </head>
 <style>
@@ -33,8 +33,9 @@ extract($_ENV);
 extract($_COOKIE);
 extract($_SESSION);
 	include "db_info.php";
-
+    mysql_query("set names utf8");
 	$result=mysql_query("SELECT * FROM main WHERE id='$_GET[id]'", $dbc);
+	mysql_query("set names utf8");
 	$row=mysql_fetch_array($result);
 ?>
 

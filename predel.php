@@ -1,6 +1,6 @@
 <!DOCTYPE >
 <head>
-	<meta charset ="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>스노티스 행사 입력</title>
 <style>
 <!--

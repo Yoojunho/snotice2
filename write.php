@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>스노티스 행사입력</title>
 	<style>
 		<!--
@@ -12,8 +12,7 @@
 		font-size : 9pt; }
 		-->
 	</style>
-</head>
-	
+</head>	
 <body topmargin="50" leftmargin="0" text="#464646">
 	<div align= "center">
 	<form action="insert.php" method=POST onsubmit="return formCheck()" enctype="multipart/form-data">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <?
 
@@ -40,7 +40,7 @@ if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadfile)) {
 } else {
     print "파일 업로드 공격의 가능성이 있습니다!\n";
 }
-
+ mysql_query("set names utf8");
  $query = "INSERT INTO main(eventname, hostname, eventsdate, eventfdate, eventtime, eventstyle, eventpres, image, id, pass, wdate, view, eventp) VALUES('$eventname', '$hostname', '$eventsdate', '$eventfdate', '$eventtime', '$eventstyle', '$eventpres', '$image', '', '$pass', now(), 0, '$eventp')";
  $result = mysql_query($query, $dbc) 
      or die('Error querying database');

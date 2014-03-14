@@ -4,7 +4,7 @@ $connect = mysql_connect("localhost", "root", "ysj082400"); //DB 주ì ëê주ì
 
 mysql_selectdb("Main");
 
-$qry = "SELECT * FROM main WHERE eventsdate >= now();";
+$qry = "SELECT * FROM main WHERE eventsdate >= DATE_ADD(now(), INTERVAL -1 DAY)";
 
 $result = mysql_query($qry);
 
