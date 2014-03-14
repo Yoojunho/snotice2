@@ -33,11 +33,11 @@ extract($_ENV);
 extract($_COOKIE);
 extract($_SESSION);
 	include "db_info.php";
-<<<<<<< HEAD
+
     mysql_query("set names utf8");
-=======
+
 	mysql_query("set names utf8");
->>>>>>> e9043ad33a7950483de1e3e57ab1db45f66bce85
+
 	$result=mysql_query("SELECT * FROM main WHERE id='$_GET[id]'", $dbc);
 	mysql_query("set names utf8");
 	$row=mysql_fetch_array($result);

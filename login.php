@@ -15,7 +15,7 @@
 </head>	
 <body topmargin="50" leftmargin="0" text="#464646">
 	<div align= "center">
-	<form action="insert.php" method=POST onsubmit="return formCheck()" enctype="multipart/form-data">
+	<form action="write.php" method=POST onsubmit="return formCheck()" enctype="multipart/form-data">
 			<table width="800" border="0" cellpadding="5" cellspacing="3" bgcolor="#ff4444">
 				<tr>
 					<td height="20" align="center" bgcolor="#ff4444">
